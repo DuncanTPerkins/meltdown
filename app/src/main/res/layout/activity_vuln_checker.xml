@@ -6,99 +6,122 @@
     android:layout_height="match_parent"
     tools:context="coolguysoft.com.spectremeltdownvulnerabilitydiagnostictoolkitadvanced.vuln_checker">
 
-    <LinearLayout
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:orientation="vertical"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:layout_editor_absoluteX="0dp">
+        android:layout_height="match_parent">
 
-        <TextView
-            android:id="@+id/mainText"
-            android:layout_width="wrap_content"
-            android:layout_height="145dp"
-            android:text="Find out if your device is one of the many affected by the new CPU vulnerabilities known as Meltdown and Spectre.\n\n\n Click the button below to begin the system scan. "
-            android:textAlignment="center"
-            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-            tools:layout_constraintLeft_creator="1"
-            tools:layout_constraintRight_creator="1"
-            tools:layout_editor_absoluteY="16dp" />
-
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-        <ImageView
-            android:id="@+id/imageView"
-            android:layout_width="match_parent"
-            android:layout_height="120dp"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentTop="true"
-            android:visibility="invisible"
-            app:srcCompat="@drawable/ic_check_circle_green_24dp" />
-
-        <ProgressBar
-            android:id="@+id/spinnerBar"
-            android:layout_width="match_parent"
-            android:layout_height="140dp"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentTop="true"
-            android:indeterminate="true"
-            android:visibility="invisible"
-            tools:layout_constraintBottom_creator="1"
-            tools:layout_constraintLeft_creator="1"
-            tools:layout_constraintRight_creator="1"
-            tools:layout_constraintTop_creator="1"
-            tools:layout_editor_absoluteX="124dp"
-            tools:layout_editor_absoluteY="95dp" />
-
-        <Button
-            android:id="@+id/button"
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_alignBottom="@+id/imageView"
-            android:layout_alignParentStart="true"
-            android:onClick="buttonOnClick"
-            android:text="Check Device"
-            tools:layout_constraintBottom_creator="1"
-            tools:layout_constraintLeft_creator="1"
-            tools:layout_constraintRight_creator="1"
-            tools:layout_constraintTop_creator="1"
-            tools:layout_editor_absoluteX="93dp"
-            tools:layout_editor_absoluteY="230dp" />
+            android:layout_marginTop="8dp"
+            android:layout_weight="12"
+            android:orientation="vertical"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:layout_editor_absoluteX="0dp">
+
+            <TextView
+                android:id="@+id/mainText"
+                android:layout_width="wrap_content"
+                android:layout_height="145dp"
+                android:text="Find out if your device is one of the many affected by the new CPU vulnerabilities known as Meltdown and Spectre.\n\n\n Click the button below to begin the system scan. A video will be shown before the scan to support our research."
+                android:textAlignment="center"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                tools:layout_constraintLeft_creator="1"
+                tools:layout_constraintRight_creator="1"
+                tools:layout_editor_absoluteY="16dp" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:id="@+id/imageView"
+                    android:layout_width="match_parent"
+                    android:layout_height="120dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentTop="true"
+                    android:visibility="invisible"
+                    app:srcCompat="@drawable/ic_check_circle_green_24dp" />
+
+                <ProgressBar
+                    android:id="@+id/spinnerBar"
+                    android:layout_width="match_parent"
+                    android:layout_height="140dp"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentTop="true"
+                    android:indeterminate="true"
+                    android:visibility="invisible"
+                    tools:layout_constraintBottom_creator="1"
+                    tools:layout_constraintLeft_creator="1"
+                    tools:layout_constraintRight_creator="1"
+                    tools:layout_constraintTop_creator="1"
+                    tools:layout_editor_absoluteX="124dp"
+                    tools:layout_editor_absoluteY="95dp" />
+
+                <Button
+                    android:id="@+id/button"
+                    android:layout_width="365dp"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBottom="@+id/imageView"
+                    android:enabled="false"
+                    android:onClick="buttonOnClick"
+                    android:layout_centerHorizontal="true"
+                    android:text="Loading..."
+                    android:textAlignment="center"
+                    tools:layout_constraintBottom_creator="1"
+                    tools:layout_constraintLeft_creator="1"
+                    tools:layout_constraintRight_creator="1"
+                    tools:layout_constraintTop_creator="1"
+                    tools:layout_editor_absoluteX="93dp"
+                    tools:layout_editor_absoluteY="230dp"
+                    tools:text="Loading..." />
 
 
+            </RelativeLayout>
 
-        </RelativeLayout>
+            <TextView
+                android:id="@+id/checkingTextView"
+                android:layout_width="match_parent"
+                android:layout_height="55dp"
+                android:text="Verifying Device Integrity..."
+                android:textAlignment="center"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:visibility="invisible"
+                tools:layout_editor_absoluteX="69dp"
+                tools:layout_editor_absoluteY="156dp" />
 
-        <TextView
-            android:id="@+id/checkingTextView"
+
+        </LinearLayout>
+
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="55dp"
-            android:text="Verifying Device Integrity..."
-            android:textAlignment="center"
-            android:textSize="18sp"
-            android:textStyle="bold"
-            android:visibility="invisible"
-            tools:layout_editor_absoluteX="69dp"
-            tools:layout_editor_absoluteY="156dp" />
+            android:layout_height="match_parent"
+            android:gravity="bottom"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            tools:layout_editor_absoluteY="390dp">
 
+            <com.google.android.gms.ads.AdView
+                android:id="@+id/adView2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                app:adSize="BANNER"
+                app:adUnitId="ca-app-pub-8858219597916065/1785302735"
+                tools:layout_editor_absoluteY="340dp" />
 
-        <com.google.android.gms.ads.AdView
-            android:id="@+id/adView"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
-            android:layout_centerHorizontal="true"
-            app:adSize="BANNER"
-            app:adUnitId="ca-app-pub-3940256099942544/6300978111" />
-    </LinearLayout>
+            <com.google.android.gms.ads.AdView
+                android:id="@+id/adView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                app:adSize="BANNER"
+                app:adUnitId="ca-app-pub-8858219597916065/3251617010"
+                tools:layout_editor_absoluteY="340dp" />
+        </LinearLayout>
 
-
-
-
-
+    </RelativeLayout>
 
 
 </android.support.constraint.ConstraintLayout>
